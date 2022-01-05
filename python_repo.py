@@ -19,10 +19,10 @@ name, stars = [], []
 for repo_dict in repo_dicts:
     name.append(repo_dict['name'])
     stars.append(repo_dict['stargazers_count'])
-    # crua a visualização
-    my_style = LS('#333366', base_style=LCS)
-    chart = pygal.Bar(style=my_style, x_label_rotation=45, show_legend=False)
-    chart.title = 'Most-Starred Python Projects on GitHub'
-    chart.x_labels = name
-    chart.add('', stars) 
+# cria a visualização
+my_style = LS('#333366', base_style=LCS)
+chart = pygal.Bar(style=my_style, x_label_rotation=45, show_legend=False)
+chart.title = 'Most-Starred Python Projects on GitHub'
+chart.x_labels = name
+chart.add('', stars) 
 chart.render_to_file('python_repos.svg')
